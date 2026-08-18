@@ -1,48 +1,156 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import '../styles/global.css';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={`${SITE_TITLE} | Computer Science & AI`} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
+			<!-- Status Badge -->
+			<div class="status-badge">
+				<span class="status-dot"></span>
+				Available for Data & AI Junior / Internship roles
+			</div>
+
+			<!-- Hero Section -->
+			<h1>Patryk Stec</h1>
+			<p class="hero-subtitle">
+				Computer Science & Econometrics student at <strong>AGH University of Krakow</strong>. 
+				Specializing in <strong>Data Analyst, Data Science</strong>, and <strong>Machine Learning</strong>.
 			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+
+			<!-- CTA Action Buttons -->
+			<div class="cta-buttons">
+				<a href={`${import.meta.env.BASE_URL}/CV_Patryk_Stec.pdf`} download="CV_Patryk_Stec.pdf" class="btn-primary">
+					📄 Download CV
+				</a>
+				<a href="https://github.com/patryks-arch" target="_blank" class="btn-primary">
+					⚡ GitHub Profile
+				</a>
+				<a href="https://www.linkedin.com/in/patryk-stec-8aa8b4332/" target="_blank" class="btn-secondary">
+					💼 LinkedIn
+				</a>
+			</div>
+
+			<!-- Stats Showcase -->
+			<div class="stats-grid">
+				<div class="stat-card">
+					<div class="stat-number">100k+</div>
+					<div class="stat-label">E-commerce Records Analyzed</div>
+				</div>
+				<div class="stat-card">
+					<div class="stat-number">AGH</div>
+					<div class="stat-label">Krakow University of Tech</div>
+				</div>
+				<div class="stat-card">
+					<div class="stat-number">3+</div>
+					<div class="stat-label">End-to-End Data/AI Projects</div>
+				</div>
+			</div>
+
+			<!-- Featured Projects Section -->
+			<h2>Featured Projects</h2>
+
+			<a href={`${import.meta.env.BASE_URL}/projects/ecommerce-analysis/`} class="project-card">
+				<h3>📊 E-commerce Profitability & Logistics Analysis</h3>
+				<p>SQL & Power BI pipeline processing over 100k+ Olist order records to identify low-margin product niches and delivery bottlenecks.</p>
+				<div class="badges">
+					<span class="badge">PostgreSQL</span>
+					<span class="badge">Advanced SQL</span>
+					<span class="badge">Power BI</span>
+				</div>
+			</a>
+
+			<a href={`${import.meta.env.BASE_URL}/projects/real-estate-etl/`} class="project-card">
+				<h3>🏠 Real Estate Market Scraper & Pipeline</h3>
+				<p>Automated end-to-end Python scraping pipeline extracting, cleaning, and visualizing real estate offers to spot undervalued properties.</p>
+				<div class="badges">
+					<span class="badge">Python</span>
+					<span class="badge">BeautifulSoup</span>
+					<span class="badge">PostgreSQL</span>
+					<span class="badge">Power BI</span>
+				</div>
+			</a>
+
+
+			<!-- Technical Skills Grid -->
+			<h2>Tech Stack</h2>
+			<div class="skills-grid">
+				<div class="skill-category">
+					<h3>Databases & Data</h3>
+					<div class="badges">
+						<span class="badge">PostgreSQL</span>
+						<span class="badge">BigQuery</span>
+						<span class="badge">Advanced SQL</span>
+						<span class="badge">Database Architecture</span>
+						<span class="badge">CTEs & Window Functions,Joins (JOIN), data aggregation (GROUP BY, HAVING), subqueries, and CRUD operations.</span>
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<h3>Programming & AI</h3>
+					<div class="badges">
+						<span class="badge">Python</span>
+						<span class="badge">Pandas / NumPy / ML</span>
+						<span class="badge">Java, R</span>
+						<span class="badge">General Programming Basics: HTML/CSS, C</span>
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<h3>BI & Analytics</h3>
+					<div class="badges">
+						<span class="badge">Power BI & Data Visualization: Interactive dashboard development, data modeling, DAX formulas, PowerQuery data transformation, and live database connections (DirectQuery/SQL).</span>
+						<span class="badge">BI & Spreadsheets: Tableau, MS Excel (Pivot Tables, VLOOKUP/XLOOKUP).</span>
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<h3>Tools & OS</h3>
+					<div class="badges">
+						<span class="badge">Version Control & Systems: Git, Linux/Shell command-line interface, Windows environment.</span>
+						<span class="badge">GitHub</span>
+						<span class="badge">Software Practices: Error handling in automation scripts, technical documentation, and maintaining data consistency</span>
+					</div>
+				</div>
+
+				<div class="skill-category">
+				<h3>Academic & Analytical Foundations</h3>
+					<div class="badges">
+						<span class="badge">Statistics & Econometrics: Time-series analysis, market trend identification, outlier detection, and statistical modeling.</span>
+						<span class="badge">Financial & Logistics Analysis: Product margin calculation, e-commerce profitability analysis, and assessing shipping cost impacts on business metrics.</span>
+						<span class="badge">Calculus: Derivatives and gradients, which form the backbone of optimization algorithms like Gradient Descent used to train machine learning models.</span>
+						<span class="badge">Linear Algebra: Matrix operations, dot products, and eigenvectors—essential for understanding high-dimensional data, feature transformations, and principal component analysis (PCA).</span>
+					</div>
+				</div>
+			</div>
+
+			
+
+			<!-- Certificates -->
+			<h2>Certificates</h2>
+			<div class="skills-grid">
+				<div class="skill-category">
+					<h3>Google Data Analyst</h3>
+					<p class="stat-label">Professional Certificate</p>
+				</div>
+				<div class="skill-category">
+					<h3>Databases & SQL for Data Science</h3>
+					<p class="stat-label">IBM / Coursera</p>
+				</div>
+				<div class="skill-category">
+					<h3>Linux Commands & Shell Scripting</h3>
+					<p class="stat-label">Hands-on Technical Certificate</p>
+				</div>
+			</div>
 		</main>
 		<Footer />
 	</body>

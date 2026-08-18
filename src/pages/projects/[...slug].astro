@@ -1,0 +1,54 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/global.css';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.id },
+		props: post,
+	}));
+}
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { Content } = await render(post);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={post.data.title} description={post.data.description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>{post.data.title}</h1>
+			<p class="hero-subtitle">{post.data.description}</p>
+			{post.data.tags && (
+				<div class="badges" style="margin-bottom: 2rem;">
+					{post.data.tags.map((tag: string) => (
+						<span class="badge">{tag}</span>
+					))}
+				</div>
+			)}
+			{post.data.heroImage && (
+				<div class="hero-image" style="margin-bottom: 2rem;">
+					<img src={post.data.heroImage.src} alt={post.data.title} style="width: 100%; border-radius: 12px;" />
+				</div>
+			)}
+			<hr style="border-color: var(--border-color); margin: 2rem 0;" />
+			<article>
+				<Content />
+			</article>
+			<div style="margin-top: 3rem; display: flex; gap: 1rem;">
+				<a href={`${import.meta.env.BASE_URL}/projects/`} class="btn-secondary">← All Projects</a>
+				<a href={`${import.meta.env.BASE_URL}`} class="btn-secondary">🏠 Home</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

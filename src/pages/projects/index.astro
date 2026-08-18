@@ -1,0 +1,45 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import '../../styles/global.css';
+
+const projects = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Projects | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Projects</h1>
+			<p class="hero-subtitle">Detailed overviews, technical writeups, and benchmarks of my data & AI projects.</p>
+			
+			<div style="margin-top: 2rem;">
+				{
+					projects.map((project) => (
+						<a href={`${import.meta.env.BASE_URL}/projects/${project.id}/`} class="project-card">
+							<h3>{project.data.title}</h3>
+							<p>{project.data.description}</p>
+							{project.data.tags && (
+								<div class="badges">
+									{project.data.tags.map((tag: string) => (
+										<span class="badge">{tag}</span>
+									))}
+								</div>
+							)}
+						</a>
+					))
+				}
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
