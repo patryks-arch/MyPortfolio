@@ -19,3 +19,5 @@ PewPal to wyspecjalizowana platforma społecznościowo-administracyjna przeznacz
 - Backend: Python 3.12, FastAPI, SQLAlchemy (async), Alembic
 - Baza: PostgreSQL 16
 - Frontend: Expo SDK (React Native), Zustand, Axios
+
+[View Code on GitHub](https://github.com/patryks-arch/Pew-Pal)
