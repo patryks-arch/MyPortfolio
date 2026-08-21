@@ -1,5 +1,5 @@
 ---
-title: "Real Estate Market Scraper & Analytics Pipeline"
+title: "🏠 Real Estate Market Scraper & Analytics Pipeline"
 description: "An automated end-to-end Python & PostgreSQL pipeline extracting, cleaning, and visualizing listing data."
 pubDate: "Aug 18 2026"
 tags: ["Python", "BeautifulSoup", "PostgreSQL", "Power BI"]

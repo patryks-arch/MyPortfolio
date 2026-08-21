@@ -1,6 +1,6 @@
 ---
 title: "🚀 Pew-Pal"
-description: "Webowa aplikacja społecznościowo-organizacyjna do administrowania ASG."
+description: "Webowa aplikacja społecznościowo-organizacyjna do administrowania ASG.Web app "
 pubDate: "2026-08-20"
 ---
 

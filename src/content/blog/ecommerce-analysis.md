@@ -1,5 +1,5 @@
 ---
-title: "E-commerce Profitability & Logistics Analysis"
+title: "📊 E-commerce Profitability & Logistics Analysis"
 description: "SQL & Power BI analysis of 100k+ orders using the Olist dataset to identify low-margin product niches."
 pubDate: "Aug 18 2026"
 tags: ["PostgreSQL", "Advanced SQL", "Power BI", "Python", "Pandas"]
