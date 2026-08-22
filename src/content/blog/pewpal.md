@@ -2,6 +2,7 @@
 title: "🚀 Pew-Pal"
 description: "Webowa aplikacja społecznościowo-organizacyjna do administrowania ASG.Web app "
 pubDate: "2026-08-20"
+tags: ["Python", "PostgreSQL", "FastAPI", "React", "TypeScript"]
 ---
 
 ## O projekcie
